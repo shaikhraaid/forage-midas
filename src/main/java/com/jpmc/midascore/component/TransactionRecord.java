@@ -24,32 +24,4 @@ public class TransactionRecord {
         this.recipient = recipient;
         this.amount = amount;
     }
-
-    public Long getId() {
-        return id;
-    }
-
-    public UserRecord getSender() {
-        return sender;
-    }
-
-    public void setSender(UserRecord sender) {
-        this.sender = sender;
-    }
-
-    public UserRecord getRecipient() {
-        return recipient;
-    }
-
-    public void setRecipient(UserRecord recipient) {
-        this.recipient = recipient;
-    }
-
-    public float getAmount() {
-        return amount;
-    }
-
-    public void setAmount(float amount) {
-        this.amount = amount;
-    }
 }
