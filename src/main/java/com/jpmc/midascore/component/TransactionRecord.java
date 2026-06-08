@@ -1,27 +1,10 @@
-package com.jpmc.midascore.entity;
+// TransactionRepository.java
+package com.jpmc.midascore.repository;
 
-import jakarta.persistence.*;
+import com.jpmc.midascore.entity.TransactionRecord;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-@Entity
-public class TransactionRecord {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @ManyToOne
-    private UserRecord sender;
-
-    @ManyToOne
-    private UserRecord recipient;
-
-    private float amount;
-
-    public TransactionRecord() {
-    }
-
-    public TransactionRecord(UserRecord sender, UserRecord recipient, float amount) {
-        this.sender = sender;
-        this.recipient = recipient;
-        this.amount = amount;
-    }
+@Repository
+public interface TransactionRepository extends CrudRepository<TransactionRecord, Long> {
 }

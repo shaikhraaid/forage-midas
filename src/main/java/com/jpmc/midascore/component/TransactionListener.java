@@ -1,3 +1,4 @@
+// TransactionListener.java
 package com.jpmc.midascore.component;
 
 import com.jpmc.midascore.entity.TransactionRecord;
@@ -24,22 +25,13 @@ public class TransactionListener {
         UserRecord sender = userRepository.findById(transaction.getSenderId());
         UserRecord recipient = userRepository.findById(transaction.getRecipientId());
 
-        if (sender == null || recipient == null) {
-            return;
-        }
-
-        if (sender.getBalance() < transaction.getAmount()) {
-            return;
-        }
+        if (sender == null || recipient == null) return;
+        if (sender.getBalance() < transaction.getAmount()) return;
 
         sender.setBalance(sender.getBalance() - transaction.getAmount());
         recipient.setBalance(recipient.getBalance() + transaction.getAmount());
 
-        transactionRepository.save(new TransactionRecord(
-                sender,
-                recipient,
-                transaction.getAmount()
-        ));
+        transactionRepository.save(new TransactionRecord(sender, recipient, transaction.getAmount()));
 
         userRepository.save(sender);
         userRepository.save(recipient);
