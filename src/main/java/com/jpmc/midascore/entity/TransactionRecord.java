@@ -18,7 +18,7 @@ public class TransactionRecord {
     private float amount;
 
     // Stores the incentive amount received from the Incentive API
-    private float incentive;
+    private float incentiveAmount;
 
     public TransactionRecord() {
     }
@@ -27,7 +27,7 @@ public class TransactionRecord {
         this.sender = sender;
         this.recipient = recipient;
         this.amount = amount;
-        this.incentive = incentive;
+        this.incentiveAmount = incentiveAmount;
     }
 
     public long getId() {
@@ -47,6 +47,6 @@ public class TransactionRecord {
     }
 
     public float getIncentive() {
-        return incentive;
+        return incentiveAmount;
     }
 }
