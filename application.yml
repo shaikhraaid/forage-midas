@@ -1,5 +1,6 @@
 general:
   kafka-topic: trader-updates
+  incentive-api-url: "http://localhost:8080/incentive"
 
 spring:
   kafka:
