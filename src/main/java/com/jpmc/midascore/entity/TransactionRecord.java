@@ -27,7 +27,7 @@ public class TransactionRecord {
         this.sender = sender;
         this.recipient = recipient;
         this.amount = amount;
-        this.incentiveAmount = incentiveAmount;
+        this.incentiveAmount = incentive;
     }
 
     public long getId() {
